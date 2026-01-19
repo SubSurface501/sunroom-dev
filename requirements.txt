@@ -1,5 +1,4 @@
 aioredis~=2.0
-asyncio
 beautifulsoup4
 celery[redis]~=5.3.6
 click
@@ -14,10 +13,9 @@ google-api-python-client
 httpx
 reportlab
 pdfminer.six
-numpy
+numpy==1.26.4
 lxml_html_clean
 stripe
-google-api-python-client
 langchain
 loguru
 nest_asyncio
@@ -50,5 +48,4 @@ google-auth-oauthlib
 google-auth-httplib2
 sentry-sdk[fastapi]
 google-cloud-texttospeech
-httpx
 python-multipart
