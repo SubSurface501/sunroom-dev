@@ -1,0 +1,3 @@
+FROM alpine:latest
+WORKDIR /app
+CMD ["sh", "-c", "echo '--- TEST LOGGER CONTAINER STARTED, SLEEPING FOR 5 MIN... ---' > /dev/stdout 2> /dev/stderr && sleep 300"]

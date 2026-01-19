@@ -1,0 +1,2092 @@
+Project Structure for: sunroom_dev
+==================================================
+│   .dockerignore
+│   .env
+│   .gcloudignore
+│   api_server.py
+│   backend_env.yaml
+│   clean_structure.txt
+│   clear_db.py
+│   client_secret.json
+│   cloudbuild.api.yaml
+│   cloudbuild.test.yaml
+│   cloudbuild.yaml
+│   deploy_err.txt
+│   deploy_out.txt
+│   docker-compose.yml
+│   Dockerfile
+│   Dockerfile.test
+│   Dockerfile.worker
+│   fixed_policy.sql
+│   gcp_deployment_guide.md
+│   isolation_test_log.txt
+│   landing_page.html
+│   map_project.py
+│   prompts.py
+│   requirements.txt
+│   run_this_to_fix_rls.sql
+│   run_worker.py
+│   system comparison.txt
+│   verify_vertex.py
+│   worker_entrypoint.sh
+│   .ruff_cache/
+│   │   .gitignore
+│   │   CACHEDIR.TAG
+│   │   0.14.5/
+│   │   │   10806648051820062479
+│   .venv/
+│   │   pyvenv.cfg
+│   │   Include/
+│   │   │   site/
+│   │   │   │   python3.12/
+│   │   │   │   │   greenlet/
+│   │   │   │   │   │   greenlet.h
+│   auth/
+│   │   dependencies.py
+│   db/
+│   │   crud.py
+│   │   schemas.py
+│   │   session.py
+│   │   supabase_client.py
+│   docs/
+│   │   audio_ingestion_tutorial.md
+│   │   celery_pool_explanation.md
+│   │   Grand_Vision.md
+│   │   virtual_environment_setup.md
+│   │   workflow_atomization_and_reconstruction.md
+│   │   sunroom_blueprint/
+│   │   │   agents_tasks.py.md
+│   │   │   AI_Prompts.md
+│   │   │   api_server.py.md
+│   │   │   Database_Schema.md
+│   │   │   Dockerfile.md
+│   │   │   Execution_Plan.md
+│   │   │   Project_Overview.md
+│   │   │   requirements.txt
+│   │   │   UI_Component_Plan.md
+│   │   │   UI_Development_Plan.md
+│   │   │   Vector_Search_Logic.md
+│   │   _archive/
+│   │   │   Comprehensive_Planning_3.1.pdf
+│   │   │   Comprehensive_Project_Review.md
+│   │   │   consult_package.md
+│   │   │   draft_message_to_justin_sledge.md
+│   │   │   FULL_GEMINI_PROMPT.md
+│   │   │   gemini_help_request.md
+│   │   │   GEMINI_WEB_PROMPT.md
+│   │   │   glitch_bottle_transcript.txt
+│   │   │   Implementing_Answers.pdf
+│   │   │   MEGA_PROMPT_SYSTEM_UPGRADE.md
+│   │   │   next_session_prompt.md
+│   │   │   persona_workflow_aris_thorne.md
+│   │   │   progress_review.md
+│   │   │   prompts.py.md
+│   │   │   raw_gcloud_logs.txt
+│   │   │   README_MVP.md
+│   │   │   requirements.txt.md
+│   │   │   style_reference.txt
+│   │   │   success_report.md
+│   │   │   success_report_phase3.md
+│   │   │   success_report_phase4.md
+│   │   │   success_report_phase5.md
+│   │   │   success_report_phase6.md
+│   │   │   success_report_phase7.md
+│   │   │   success_report_phase8.md
+│   │   │   system_logic_and_ux.md
+│   │   │   This is the critical engineering ch.txt
+│   │   │   user_guide_batch_ingestion.md
+│   │   │   UX_UI_brief.md
+│   llm/
+│   │   client.py
+│   │   rate_limiter.py
+│   logs/
+│   │   api_server.err.log
+│   │   api_server.log
+│   │   celery.log
+│   │   celery_err.log
+│   │   celery_purge.log
+│   │   celery_purge_err.log
+│   │   crash.log
+│   │   error.log
+│   │   worker.err.log
+│   │   worker.log
+│   │   worker_debug.log
+│   model_server/
+│   │   Dockerfile
+│   │   main.py
+│   │   requirements.txt
+│   public/
+│   │   images/
+│   │   │   Jacob-Headshot.jpg
+│   │   │   mockup_1.jpg
+│   │   │   mockup_2.jpg
+│   │   │   mockup_3.jpg
+│   │   │   mockup_4.jpg
+│   │   │   mockup_5.jpg
+│   research_papers/
+│   │   AutomatingResearchDiscovery.pdf
+│   │   CLIP.pdf
+│   │   CommunityAwarePersonaAgent.pdf
+│   │   GraphOfThoughts.pdf
+│   │   IlluminatingSearch.pdf
+│   │   Learning Compositional Functions with Transformers.pdf
+│   │   MANIFOLDFORMER.pdf
+│   │   MirrorMind.pdf
+│   │   NoveltySearch.pdf
+│   │   PathBasedReasoning.pdf
+│   │   PromptTuning.pdf
+│   │   Real-Time Reasoning Agents in Evolving Environments.pdf
+│   │   SoftCoTReasoning.pdf
+│   │   Transformers Provably Learn Chain-of-Thought Reasoning.pdf
+│   │   TreeOfThoughts.pdf
+│   scripts/
+│   │   apply_fix_migration.py
+│   │   apply_migration.py
+│   │   apply_migration_026.py
+│   │   apply_migration_028.py
+│   │   audit_data_leak.py
+│   │   build_initial_graph.py
+│   │   calculate_hash.py
+│   │   calculate_secret_info.py
+│   │   check_all_nodes.py
+│   │   check_atom_dates.py
+│   │   check_models.py
+│   │   check_nodes_api.py
+│   │   check_specific_volume.py
+│   │   check_stuck_node.py
+│   │   check_table_exists.py
+│   │   check_users.py
+│   │   check_volume_progress.py
+│   │   cleanup_volumes.py
+│   │   clear_asset_bank.py
+│   │   compile_volume_html.py
+│   │   convert_timestamp.py
+│   │   create_test_volume.py
+│   │   dashboard.py
+│   │   debug_all_volumes.py
+│   │   debug_atoms.py
+│   │   debug_celery_state.py
+│   │   debug_images.py
+│   │   debug_path.py
+│   │   debug_publisher.py
+│   │   debug_sources.py
+│   │   debug_volume_data.py
+│   │   debug_volume_ids.py
+│   │   decode_jwt.py
+│   │   delete_duplicates.py
+│   │   delete_token.py
+│   │   delete_user_data.py
+│   │   delete_volume.py
+│   │   diagnose_gemini.py
+│   │   diagnose_vertex_image_models.py
+│   │   filter_logs.py
+│   │   find_source_id.py
+│   │   find_source_id_v2.py
+│   │   fix_cluster_names.py
+│   │   fix_enum_migration.py
+│   │   force_migration.py
+│   │   generated_persona.json
+│   │   generated_persona_v2.json
+│   │   generate_jwt.py
+│   │   healthcheck_server.py
+│   │   ingest_local_audio.py
+│   │   ingest_local_transcript.py
+│   │   ingest_series.py
+│   │   insert_test_data.py
+│   │   inspect_graph.py
+│   │   inspect_library.py
+│   │   inspect_node_content.py
+│   │   inspect_node_dossier.py
+│   │   inspect_volume_columns.py
+│   │   investigate_baudelaire.py
+│   │   kick_stuck_volume.py
+│   │   list_volumes.py
+│   │   make_api_call.py
+│   │   manual_password_reset.py
+│   │   mind_wipe.py
+│   │   payload.json
+│   │   persona.json
+│   │   preflight_check.py
+│   │   Procfile
+│   │   raw_gcloud_logs_broad.json
+│   │   rehydrate_embeddings.py
+│   │   reindex_atoms.py
+│   │   repair_node.py
+│   │   reproduce_suggestions_issue.py
+│   │   requirements_for_migration.txt
+│   │   run_indexing_direct.py
+│   │   run_production_test.py
+│   │   run_test_suite.py
+│   │   seed_time_test.py
+│   │   show_generated_trailheads.py
+│   │   startup.sh
+│   │   stress_test_freshness.py
+│   │   supabase_auth_response.json
+│   │   test_agent.py
+│   │   test_architect_direct.py
+│   │   test_audio.py
+│   │   test_biographer.py
+│   │   test_biographer_only.py
+│   │   test_db_connection.py
+│   │   test_deep_volume.py
+│   │   test_full_render.py
+│   │   test_google_login.py
+│   │   test_ideation.py
+│   │   test_illustrator.py
+│   │   test_imagen.py
+│   │   test_mirrormind_imports.py
+│   │   test_phase3.py
+│   │   test_phase4.py
+│   │   test_publisher.py
+│   │   test_saga.py
+│   │   test_search.py
+│   │   test_storybook.py
+│   │   test_suggestions.py
+│   │   test_time_generation.py
+│   │   test_v2_pipeline.py
+│   │   test_v3_pipeline.py
+│   │   test_v3_render.py
+│   │   transcribe_local_video.py
+│   │   trigger_dreaming.py
+│   │   trigger_full_regeneration.py
+│   │   trigger_ideation.py
+│   │   trigger_indexing_retry.py
+│   │   trigger_ingestion.py
+│   │   trigger_narrator_illustrator.py
+│   │   trigger_total_rebuild.py
+│   │   unarchive_volumes.py
+│   │   verify_ebm_loop.py
+│   │   verify_jwt.py
+│   │   verify_manifold.py
+│   │   verify_mirrormind.py
+│   │   verify_monitor.py
+│   │   verify_text_chunks_insert.py
+│   services/
+│   │   audio/
+│   │   │   processor.py
+│   │   billing/
+│   │   │   api.py
+│   │   │   gatekeeper.py
+│   │   │   stripe_service.py
+│   │   ingestion/
+│   │   │   audio_atomizer.py
+│   storage/
+│   │   client.py
+│   sunroom-web/
+│   │   .env.local
+│   │   .gitignore
+│   │   cloudbuild.frontend.yaml
+│   │   Dockerfile
+│   │   env_vars.yaml
+│   │   eslint.config.mjs
+│   │   middleware.ts
+│   │   next-env.d.ts
+│   │   next.config.mjs
+│   │   package.json
+│   │   postcss.config.mjs
+│   │   tailwind.config.js
+│   │   tsconfig.json
+│   │   public/
+│   │   │   file.svg
+│   │   │   globe.svg
+│   │   │   next.svg
+│   │   │   sun.svg
+│   │   │   vercel.svg
+│   │   │   window.svg
+│   │   │   images/
+│   │   │   │   Jacob-Headshot.jpg
+│   │   │   │   mockup_1.jpg
+│   │   │   │   mockup_2.jpg
+│   │   │   │   mockup_3.jpg
+│   │   │   │   mockup_4.jpg
+│   │   │   │   mockup_5.jpg
+│   │   │   worker/
+│   │   │   │   main.py
+│   │   │   │   output/
+│   │   │   │   │   audio/
+│   │   │   │   │   html_book/
+│   │   │   │   │   │   10146c7e-b3c0-4d39-809f-b2e2aa523d80/
+│   │   │   │   │   │   │   175955be-defe-4724-bcd3-0225d0adee9c.html
+│   │   │   │   │   │   │   1ac82982-7992-44a9-a9fc-9bbbb6292034.html
+│   │   │   │   │   │   │   63c8aead-8206-4419-88ab-467670d2fce4.html
+│   │   │   │   │   │   │   93666f3c-91ac-4f47-95a2-9976150440be.html
+│   │   │   │   │   │   │   aec99330-6647-4fb6-9074-76da0c8a2e80.html
+│   │   │   │   │   │   │   b934901f-f1d2-42c9-8b32-139f76405b71.html
+│   │   │   │   │   │   │   dc779647-94d7-4768-bdfc-34bee30795a0.html
+│   │   │   │   │   │   │   start.html
+│   │   │   │   │   │   │   images/
+│   │   │   │   │   │   a7367aa6-eeed-4167-842f-9a0d4aecf9da/
+│   │   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932.html
+│   │   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c.html
+│   │   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea.html
+│   │   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead.html
+│   │   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5.html
+│   │   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a.html
+│   │   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df.html
+│   │   │   │   │   │   │   start.html
+│   │   │   │   │   │   │   images/
+│   │   │   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932_page_01.png
+│   │   │   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932_page_02.png
+│   │   │   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c_page_01.png
+│   │   │   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c_page_02.png
+│   │   │   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea_page_01.png
+│   │   │   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea_page_02.png
+│   │   │   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead_page_01.png
+│   │   │   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead_page_02.png
+│   │   │   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_01.png
+│   │   │   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_02.png
+│   │   │   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_03.png
+│   │   │   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_04.png
+│   │   │   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a_page_01.png
+│   │   │   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a_page_02.png
+│   │   │   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df_page_01.png
+│   │   │   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df_page_02.png
+│   │   │   │   │   │   baf8c4a0-cb4e-425f-bdc3-98c23eb2157d/
+│   │   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2.html
+│   │   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc.html
+│   │   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e.html
+│   │   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439.html
+│   │   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed.html
+│   │   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d.html
+│   │   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39.html
+│   │   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401.html
+│   │   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e.html
+│   │   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9.html
+│   │   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4.html
+│   │   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7.html
+│   │   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446.html
+│   │   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb.html
+│   │   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315.html
+│   │   │   │   │   │   │   start.html
+│   │   │   │   │   │   │   images/
+│   │   │   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2_page_01.png
+│   │   │   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2_page_02.png
+│   │   │   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc_page_01.png
+│   │   │   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc_page_02.png
+│   │   │   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e_page_01.png
+│   │   │   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e_page_02.png
+│   │   │   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439_page_01.png
+│   │   │   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439_page_02.png
+│   │   │   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed_page_01.png
+│   │   │   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed_page_02.png
+│   │   │   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d_page_01.png
+│   │   │   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d_page_02.png
+│   │   │   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39_page_01.png
+│   │   │   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39_page_02.png
+│   │   │   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401_page_01.png
+│   │   │   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401_page_02.png
+│   │   │   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e_page_01.png
+│   │   │   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e_page_02.png
+│   │   │   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9_page_01.png
+│   │   │   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9_page_02.png
+│   │   │   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_01.png
+│   │   │   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_02.png
+│   │   │   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_03.png
+│   │   │   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_04.png
+│   │   │   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7_page_01.png
+│   │   │   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7_page_02.png
+│   │   │   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446_page_01.png
+│   │   │   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446_page_02.png
+│   │   │   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb_page_01.png
+│   │   │   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb_page_02.png
+│   │   │   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315_page_01.png
+│   │   │   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315_page_02.png
+│   │   │   │   │   images/
+│   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Trust_in_Divine_Intervention.pdf
+│   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Shattered_Reflection.pdf
+│   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Mirror_of_Souls.pdf
+│   │   │   │   │   │   175955be-defe-4724-bcd3-0225d0adee9c/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_The_Golem's_Awakening.pdf
+│   │   │   │   │   │   1ac82982-7992-44a9-a9fc-9bbbb6292034/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Labyrinth_of_Letters.pdf
+│   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Golem_Awakens-_Limited_Potential.pdf
+│   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Prague,_1580-_The_Rabbi's_Vision.pdf
+│   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_The_Ritual_Begins-_The_Four_Elements.pdf
+│   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_The_Tincture_of_Life.pdf
+│   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Revelation_in_the_Obsidian_Mirror.pdf
+│   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_A_Desperate_Struggle.pdf
+│   │   │   │   │   │   63c8aead-8206-4419-88ab-467670d2fce4/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Golem's_Fury.pdf
+│   │   │   │   │   │   65fb7e37-d99d-4178-8c84-81587945daa3/
+│   │   │   │   │   │   │   concept_agrippa.png
+│   │   │   │   │   │   │   concept_invisibilia_dei.png
+│   │   │   │   │   │   │   concept_john_dee.png
+│   │   │   │   │   │   │   concept_the_picatrix.png
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   page_05.png
+│   │   │   │   │   │   │   The_Agrippan_Labyrinth_of_Mock_Ideas.pdf
+│   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Echoes_of_the_Past.pdf
+│   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_Unstable_Creation-_A_Dangerous_Ally.pdf
+│   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_The_Cipher_of_Ages.pdf
+│   │   │   │   │   │   93666f3c-91ac-4f47-95a2-9976150440be/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Secrets_of_the_Kabbalah.pdf
+│   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Whispers_of_the_Past.pdf
+│   │   │   │   │   │   aec99330-6647-4fb6-9074-76da0c8a2e80/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Lessons_in_Deception.pdf
+│   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Water's_Flow-_Life_and_Obedience.pdf
+│   │   │   │   │   │   b934901f-f1d2-42c9-8b32-139f76405b71/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_A_Creature_of_Two_Worlds.pdf
+│   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Breaching_the_Threshold.pdf
+│   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_Rushing_Tides.pdf
+│   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_The_Ascent_of_Shades.pdf
+│   │   │   │   │   │   dc779647-94d7-4768-bdfc-34bee30795a0/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Golem's_Rebellion.pdf
+│   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Alchemist's_Cipher.pdf
+│   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   Saga-_Earth's_Embrace-_Stability_and_Strength.pdf
+│   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Severing_the_Core.pdf
+│   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_Poisoned_Gift.pdf
+│   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   Saga-_The_Alchemist's_Last_Secret.pdf
+│   │   │   │   │   │   Saga1 - Copy/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   page_05.png
+│   │   │   │   │   │   │   page_06.png
+│   │   │   │   │   │   │   page_07.png
+│   │   │   │   │   │   │   page_08.png
+│   │   │   │   │   │   │   page_09.png
+│   │   │   │   │   │   │   page_10.png
+│   │   │   │   │   │   │   page_11.png
+│   │   │   │   │   │   │   page_12.png
+│   │   │   │   │   │   │   Saga-_Saga-_Mock_Idea.pdf
+│   │   │   │   │   │   Saga2 - Copy/
+│   │   │   │   │   │   │   page_01.png
+│   │   │   │   │   │   │   page_02.png
+│   │   │   │   │   │   │   page_03.png
+│   │   │   │   │   │   │   page_04.png
+│   │   │   │   │   │   │   page_05.png
+│   │   │   │   │   │   │   page_06.png
+│   │   │   │   │   │   │   page_07.png
+│   │   │   │   │   │   │   page_08.png
+│   │   │   │   │   │   │   page_09.png
+│   │   │   │   │   │   │   page_10.png
+│   │   │   │   │   │   │   page_11.png
+│   │   │   │   │   │   │   page_12.png
+│   │   │   │   │   │   │   Saga-_Saga-_Mock_Idea.pdf
+│   │   │   │   src/
+│   │   │   │   │   worker.py
+│   │   │   │   │   __init__.py
+│   │   │   │   │   agents/
+│   │   │   │   │   │   architect_v2.py
+│   │   │   │   │   │   base.py
+│   │   │   │   │   │   batch_producer.py
+│   │   │   │   │   │   biographer.py
+│   │   │   │   │   │   director.py
+│   │   │   │   │   │   graph_generation.py
+│   │   │   │   │   │   illustrator.py
+│   │   │   │   │   │   indexing.py
+│   │   │   │   │   │   narrator_agent.py
+│   │   │   │   │   │   publisher.py
+│   │   │   │   │   │   researcher.py
+│   │   │   │   │   │   scripting.py
+│   │   │   │   │   │   storybook.py
+│   │   │   │   │   │   tasks.py
+│   │   │   │   │   │   youtube_ideation.py
+│   │   │   │   │   │   youtube_ingestion.py
+│   │   │   │   │   │   __init__.py
+│   │   │   │   │   app/
+│   │   │   │   │   │   globals.css
+│   │   │   │   │   │   layout.tsx
+│   │   │   │   │   │   page.tsx
+│   │   │   │   │   │   agents/
+│   │   src/
+│   │   │   app/
+│   │   │   │   favicon.ico
+│   │   │   │   globals.css
+│   │   │   │   layout.tsx
+│   │   │   │   page.tsx
+│   │   │   │   providers.tsx
+│   │   │   │   api/
+│   │   │   │   │   image/
+│   │   │   │   │   │   route.ts
+│   │   │   │   auth/
+│   │   │   │   │   callback/
+│   │   │   │   │   │   route.ts
+│   │   │   │   dashboard/
+│   │   │   │   │   page.tsx
+│   │   │   │   │   blueprint/
+│   │   │   │   │   │   [taskId]/
+│   │   │   │   │   │   │   page.tsx
+│   │   │   │   │   mirror/
+│   │   │   │   │   │   page.tsx
+│   │   │   │   knowledge-graph/
+│   │   │   │   │   page.tsx
+│   │   │   │   login/
+│   │   │   │   │   actions.ts
+│   │   │   │   │   page.tsx
+│   │   │   │   play/
+│   │   │   │   │   [volumeId]/
+│   │   │   │   │   │   page.tsx
+│   │   │   │   project/
+│   │   │   │   │   [id]/
+│   │   │   │   │   │   page.tsx
+│   │   │   │   studio/
+│   │   │   │   │   [volumeId]/
+│   │   │   │   │   │   page.tsx
+│   │   │   │   test-connection/
+│   │   │   │   │   page.tsx
+│   │   │   │   universes/
+│   │   │   │   │   page.tsx
+│   │   │   │   volume/
+│   │   │   │   │   [id]/
+│   │   │   │   │   │   map/
+│   │   │   │   │   │   │   page.tsx
+│   │   │   components/
+│   │   │   │   AuthContext.tsx
+│   │   │   │   BlueprintConfigModal.tsx
+│   │   │   │   CategoryManagerModal.tsx
+│   │   │   │   CompositePanel.tsx
+│   │   │   │   CreateVolumeModal.tsx
+│   │   │   │   DeepThinker.tsx
+│   │   │   │   EmptyState.tsx
+│   │   │   │   GardenerPanel.tsx
+│   │   │   │   GraphView.tsx
+│   │   │   │   LandingPage.tsx
+│   │   │   │   Navbar.tsx
+│   │   │   │   ProjectCard.tsx
+│   │   │   │   ProtectedRoute.tsx
+│   │   │   │   Radar.tsx
+│   │   │   │   SourceInspector.tsx
+│   │   │   │   StoryPlayer.tsx
+│   │   │   │   SunRoom.tsx
+│   │   │   │   Timeline.tsx
+│   │   │   │   UploadZone.tsx
+│   │   │   │   VolumeReader.tsx
+│   │   │   │   Billing/
+│   │   │   │   │   BillingButton.tsx
+│   │   │   │   │   PricingModal.tsx
+│   │   │   │   graph/
+│   │   │   │   │   NodeDetailsPanel.tsx
+│   │   │   │   │   StoryNode.tsx
+│   │   │   │   │   TemporalMap.tsx
+│   │   │   │   mirror/
+│   │   │   │   │   PersonaEditor.tsx
+│   │   │   │   project/
+│   │   │   │   │   LensMarket.tsx
+│   │   │   │   │   PersonaEditor.tsx
+│   │   │   │   │   ProjectCreator.tsx
+│   │   │   │   research/
+│   │   │   │   │   GapMap.tsx
+│   │   │   │   universes/
+│   │   │   │   │   ArchetypeCard.tsx
+│   │   │   │   │   DiscoveryTracker.tsx
+│   │   │   │   │   EpochTimeline.tsx
+│   │   │   │   │   UniverseList.tsx
+│   │   │   │   │   Workspace.tsx
+│   │   │   context/
+│   │   │   │   WorkspaceContext.tsx
+│   │   │   lib/
+│   │   │   │   api.ts
+│   │   │   │   supabase-server.ts
+│   │   │   │   supabase.ts
+│   │   │   │   utils.ts
+│   │   │   services/
+│   │   │   │   api.ts
+│   │   │   │   universeService.ts
+│   │   │   stores/
+│   │   │   │   graphStore.ts
+│   │   │   │   storyStore.ts
+│   │   │   types/
+│   │   │   │   schema.ts
+│   supabase/
+│   │   config.toml
+│   │   .temp/
+│   │   │   cli-latest
+│   │   │   gotrue-version
+│   │   │   pooler-url
+│   │   │   postgres-version
+│   │   │   project-ref
+│   │   │   rest-version
+│   │   │   storage-version
+│   │   functions/
+│   │   │   get-schema/
+│   │   │   │   .npmrc
+│   │   │   │   deno.json
+│   │   │   │   index.ts
+│   tests/
+│   │   smoke_test_full.py
+│   │   verify_collaboration.py
+│   │   verify_ebm_loop.py
+│   videos/
+│   worker/
+│   │   main.py
+│   │   requirements.txt
+│   │   __init__.py
+│   │   output/
+│   │   │   Baudelaire.pdf
+│   │   │   entropy-17-01971.pdf
+│   │   │   Introduction to Merkavah Mysticism - 1 of 15 - To Ascend in Peace - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 10 of 15 - Dangers and Ordeals - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 12 of 15 - Goals of the Merkavah Mysticism - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 13 of 15 -  The Sar Torah & Sh’iur Komah - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 2 of 15 - Theophany as Foundation - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 3a of 15 - The Apocalyptic Matrix - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 3b of 15 - The Apocalyptic Matrix - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 4 of 15 - The Visions of Paul - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 5 of 15 - The Danger of Reading - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 6 of 15 - The Four that Entered the Garden - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 7a of 15 - The Map is Not Territory - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 7b of 15 - The Map is Not Territory - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 8 of 15 - Who is Able to See it - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism - 9 of 15 - The Myth-Scape of the Hekhalot - ESOTERICA.mp3
+│   │   │   Introduction to Merkavah Mysticism and Hekhalot Literature Seminar Announcement - ESOTERICA.mp3
+│   │   │   Physics and Philosophy the Revolytion in Modern Science.pdf
+│   │   │   relativity.pdf
+│   │   │   audio/
+│   │   │   html_book/
+│   │   │   │   10146c7e-b3c0-4d39-809f-b2e2aa523d80/
+│   │   │   │   │   175955be-defe-4724-bcd3-0225d0adee9c.html
+│   │   │   │   │   1ac82982-7992-44a9-a9fc-9bbbb6292034.html
+│   │   │   │   │   63c8aead-8206-4419-88ab-467670d2fce4.html
+│   │   │   │   │   93666f3c-91ac-4f47-95a2-9976150440be.html
+│   │   │   │   │   aec99330-6647-4fb6-9074-76da0c8a2e80.html
+│   │   │   │   │   b934901f-f1d2-42c9-8b32-139f76405b71.html
+│   │   │   │   │   dc779647-94d7-4768-bdfc-34bee30795a0.html
+│   │   │   │   │   start.html
+│   │   │   │   │   images/
+│   │   │   │   a7367aa6-eeed-4167-842f-9a0d4aecf9da/
+│   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932.html
+│   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c.html
+│   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea.html
+│   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead.html
+│   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5.html
+│   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a.html
+│   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df.html
+│   │   │   │   │   start.html
+│   │   │   │   │   images/
+│   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932_page_01.png
+│   │   │   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932_page_02.png
+│   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c_page_01.png
+│   │   │   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c_page_02.png
+│   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea_page_01.png
+│   │   │   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea_page_02.png
+│   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead_page_01.png
+│   │   │   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead_page_02.png
+│   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_01.png
+│   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_02.png
+│   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_03.png
+│   │   │   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5_page_04.png
+│   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a_page_01.png
+│   │   │   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a_page_02.png
+│   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df_page_01.png
+│   │   │   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df_page_02.png
+│   │   │   │   baf8c4a0-cb4e-425f-bdc3-98c23eb2157d/
+│   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2.html
+│   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc.html
+│   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e.html
+│   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439.html
+│   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed.html
+│   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d.html
+│   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39.html
+│   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401.html
+│   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e.html
+│   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9.html
+│   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4.html
+│   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7.html
+│   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446.html
+│   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb.html
+│   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315.html
+│   │   │   │   │   start.html
+│   │   │   │   │   images/
+│   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2_page_01.png
+│   │   │   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2_page_02.png
+│   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc_page_01.png
+│   │   │   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc_page_02.png
+│   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e_page_01.png
+│   │   │   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e_page_02.png
+│   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439_page_01.png
+│   │   │   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439_page_02.png
+│   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed_page_01.png
+│   │   │   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed_page_02.png
+│   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d_page_01.png
+│   │   │   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d_page_02.png
+│   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39_page_01.png
+│   │   │   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39_page_02.png
+│   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401_page_01.png
+│   │   │   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401_page_02.png
+│   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e_page_01.png
+│   │   │   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e_page_02.png
+│   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9_page_01.png
+│   │   │   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9_page_02.png
+│   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_01.png
+│   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_02.png
+│   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_03.png
+│   │   │   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4_page_04.png
+│   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7_page_01.png
+│   │   │   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7_page_02.png
+│   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446_page_01.png
+│   │   │   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446_page_02.png
+│   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb_page_01.png
+│   │   │   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb_page_02.png
+│   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315_page_01.png
+│   │   │   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315_page_02.png
+│   │   │   images/
+│   │   │   │   00fffd16-acbd-4cf5-a6ff-0d10945b0f2b/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Hunt_for_Stardust.pdf
+│   │   │   │   02f1aa85-2bb2-4200-bf0c-de3f649d2bea/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Empathic_Resonance.pdf
+│   │   │   │   04291f6b-126f-4e9c-95bc-835d0b77dcf7/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Extremal_Gateway.pdf
+│   │   │   │   0528ed8d-0b41-4cc4-b0b4-ff262dc622ea/
+│   │   │   │   066ba766-092c-4675-ba91-0b339454ad0a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Serpent's_Whisper.pdf
+│   │   │   │   0694007a-290e-4bc7-876c-865180dd2356/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Guardian's_Secret.pdf
+│   │   │   │   06b6c049-c835-42b9-8218-54421ff14cb1/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Blue_Horizon's_Call.pdf
+│   │   │   │   0b3f8309-c45c-4f98-8852-88c65fe737db/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Light's_Internal_Compass.pdf
+│   │   │   │   0e5de5c1-5a71-43ee-b1b1-ac510e553eb3/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   0efb404a-35ce-46a2-b1ee-c7ff3ca0fd12/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Silence_Falls.pdf
+│   │   │   │   0fbbd0eb-4932-4831-b6d3-b2e84d48c932/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Trust_in_Divine_Intervention.pdf
+│   │   │   │   0feedb29-1ce1-42ac-a1a8-72903b9eeef6/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Harmonic_Resonance.pdf
+│   │   │   │   1019f6b0-d2c4-4c01-b9d5-f6ddfc99f588/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Veiled_Vulnerability.pdf
+│   │   │   │   10c38330-a3f9-4816-b178-caf20406138b/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Serpent's_Whisper.pdf
+│   │   │   │   10df8467-6b32-47b5-8ccf-a38d73306bf2/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Shattered_Reflection.pdf
+│   │   │   │   116d0b26-1e17-443e-9423-07ba0e5d77ef/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Vanishing_Horizon.pdf
+│   │   │   │   1263e9b5-1325-4675-a194-65efc1c72048/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Heart_of_the_Divide.pdf
+│   │   │   │   137786fd-80eb-47dd-a97a-987c66de8002/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Threshold_of_Living_Light.pdf
+│   │   │   │   149cb120-ea9b-483a-b86d-9563a8a6cefc/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Mirror_of_Souls.pdf
+│   │   │   │   16cc5f6d-ca49-4e1d-8a75-ffb613825485/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Xibalba's_Fury.pdf
+│   │   │   │   175955be-defe-4724-bcd3-0225d0adee9c/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Golem's_Awakening.pdf
+│   │   │   │   1ac82982-7992-44a9-a9fc-9bbbb6292034/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Labyrinth_of_Letters.pdf
+│   │   │   │   1b9b5b25-9097-4741-9584-bee81a6d2008/
+│   │   │   │   │   Whispers_of_a_Sentient_Glow.pdf
+│   │   │   │   1c962b99-144c-48f5-a06e-71e1eed27b2c/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Golem_Awakens-_Limited_Potential.pdf
+│   │   │   │   1d57dbb1-4491-43c5-9dd8-f2cc2d2e06e7/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_First_Whisper.pdf
+│   │   │   │   205f49ec-2ee4-456b-8e87-03a1b31bcdea/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Prague,_1580-_The_Rabbi's_Vision.pdf
+│   │   │   │   2074a35e-a13b-48a6-af0e-be024bc49d16/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Collective_Consciousness.pdf
+│   │   │   │   218893dd-d390-4deb-b719-37d05e0a8a0c/
+│   │   │   │   │   Crossing_the_Bridge.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   22e965d7-5001-47a6-8469-0fbb43bb0219/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Unwritten_World.pdf
+│   │   │   │   2399340c-5966-4196-a7e5-59f04d93b088/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Mountain's_Wounded_Heart.pdf
+│   │   │   │   27b48e72-83d9-416f-a540-4191d1251b20/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Ethereal_Cartographer.pdf
+│   │   │   │   281b9bb2-28c5-4c34-a73c-cb43195b83df/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Guardian's_Revelation.pdf
+│   │   │   │   2accb10a-6ccd-4412-8052-6bf0ccfa32d0/
+│   │   │   │   │   Resonating_the_Reality_Weave.pdf
+│   │   │   │   2af9a595-75bd-4b40-a0ab-92e4b7991ca4/
+│   │   │   │   │   The_Shard_of_the_Sunstone_Sisterhood-_A_Ritual_Imperiled.pdf
+│   │   │   │   2b31b53e-5984-4b50-9e42-9f72a3f8dd86/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   2b31db4c-49ee-44dc-ae70-6fbfa1921b30/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Echoing_Discord.pdf
+│   │   │   │   2cb34edb-5960-4dda-a9ac-02a19bc8e093/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Unveiling_of_Xibalba.pdf
+│   │   │   │   2cc84ddf-c860-4c62-9824-395fc443f95a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Cartographer's_Codex.pdf
+│   │   │   │   2d612584-a6b7-423b-a58e-4bdb867e9a51/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   2d714177-dc1f-465f-b027-1600caaf7841/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Walk.pdf
+│   │   │   │   2df568b6-4c15-4a91-b38a-9e6c5e0f5ead/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Ritual_Begins-_The_Four_Elements.pdf
+│   │   │   │   318def3b-2824-43c5-ba0a-e8462d979c30/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_World_Awakens.pdf
+│   │   │   │   34851f78-bab2-48c1-a183-024fac453388/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Unfolding_Atlas.pdf
+│   │   │   │   36a34fef-2606-47d2-8074-944dce37e775/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Unveiling_Truth.pdf
+│   │   │   │   38756b6e-5d9b-4119-afa4-bddee4427b95/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Guardian's_Roar.pdf
+│   │   │   │   3b1acb80-3eab-42bd-b8e9-47487fa96b02/
+│   │   │   │   │   The_Generative_Light-Script.pdf
+│   │   │   │   3c433112-0931-49a0-b063-652f4df12c9c/
+│   │   │   │   │   Decoding_the_Celestial_Hum.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   427592a9-9297-40dc-90f2-c61ff4bb5c8c/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Anomaly's_Heart.pdf
+│   │   │   │   46783c43-4c78-4385-9b61-f3e28281c619/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   49ca0ecb-272e-452f-b97d-78c850911616/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   4a2a4e12-53ec-4a5c-8400-d7735dd5eb0b/
+│   │   │   │   │   Echoes_from_the_Near-Horizon.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   4a8059f4-9662-471a-982f-79af236c3dee/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Codebreaker's_Archive.pdf
+│   │   │   │   4e1d1d87-482b-40dc-8343-baa5312e163a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Dual_Reality's_Cipher.pdf
+│   │   │   │   505988f4-675e-4a64-9102-6573c8a93092/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Xibalba_Trembles.pdf
+│   │   │   │   50884847-14c3-4e27-97f4-af6bb844ccc9/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Somatic_Nodal_Point.pdf
+│   │   │   │   51923647-b8f1-45e3-8236-11de119b19fe/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   Whispers_of_the_Old_Path.pdf
+│   │   │   │   526a0dd6-c52e-4ebc-9ec6-e5b23c2e5e64/
+│   │   │   │   │   The_Algorithmic_Recalibration.pdf
+│   │   │   │   52a05c02-599c-40ec-a97e-7accacbe54ac/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Resonant_Heartbeat.pdf
+│   │   │   │   52c2132e-1da1-4b95-afbc-70829b9ddd0f/
+│   │   │   │   │   The_Symbiotic_Resonance.pdf
+│   │   │   │   52f0a2cd-a345-4cbc-aeb0-4befe6477467/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Algorithmic_Compass.pdf
+│   │   │   │   53c36f56-2ca7-4d22-8609-343808c5218e/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Tincture_of_Life.pdf
+│   │   │   │   5402a90d-854d-48fd-86fd-1ce3c2f82439/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Revelation_in_the_Obsidian_Mirror.pdf
+│   │   │   │   547dbb36-4ca6-407b-8c29-7e73ad4b69fc/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Emancipatory_Radiance.pdf
+│   │   │   │   54b59e24-ab60-4c1a-a436-fc99b6d8b36f/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Echoes_of_the_First_Theft.pdf
+│   │   │   │   5616518a-0099-4089-aa55-670e47a33473/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   561a0e5d-dfe0-462d-9f7b-54ab334dbc4f/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Fractured_Reflections.pdf
+│   │   │   │   568e56d4-8b64-485b-bdad-5c0d0cfba33a/
+│   │   │   │   │   Echoes_of_the_Architects.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   576a7628-8a35-460f-a4c4-4058a28cbcfd/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Shadow_of_the_Past-_Echoes_of_the_Sundering.pdf
+│   │   │   │   58750600-9699-4a58-9400-c9a1d443e8d7/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Council_of_Selves.pdf
+│   │   │   │   596061b6-fa58-411e-a708-92293ec8fcf3/
+│   │   │   │   │   Crossing_the_Bridge.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   5b4e2365-c193-46e9-8d18-37d463ad63b1/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   5bbe428e-8a5e-4814-bfe0-8613bda128e2/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Serpent's_Maw-_First_Blood.pdf
+│   │   │   │   5cdee2cc-bedf-4c7a-a8b1-d407807d9493/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Echoes_of_the_Old_Gods.pdf
+│   │   │   │   5f008895-051d-4d2f-bedb-373fd84321b1/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_A_Bargain_with_Memory.pdf
+│   │   │   │   60eeb5ff-4c31-4eee-8d03-60d759643aed/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_A_Desperate_Struggle.pdf
+│   │   │   │   63c8aead-8206-4419-88ab-467670d2fce4/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Golem's_Fury.pdf
+│   │   │   │   642dd2c1-1a18-437d-bce8-261f60e326ff/
+│   │   │   │   65fb7e37-d99d-4178-8c84-81587945daa3/
+│   │   │   │   │   concept_agrippa.png
+│   │   │   │   │   concept_invisibilia_dei.png
+│   │   │   │   │   concept_john_dee.png
+│   │   │   │   │   concept_the_picatrix.png
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   The_Agrippan_Labyrinth_of_Mock_Ideas.pdf
+│   │   │   │   6860e043-732d-4b47-a80e-be07eaa7efc7/
+│   │   │   │   │   Echoes_from_the_Ephemeral_Silence.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   6f819057-2822-4b2e-b9bd-bd0152ea95ae/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Shifting_Spire.pdf
+│   │   │   │   70e324fc-9bf5-46c4-91fc-eed3fcb9fa5d/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Echoes_of_the_Past.pdf
+│   │   │   │   71a7bfd3-30ad-4a67-9ea2-2494cda11b64/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Hunters_of_the_Unmade.pdf
+│   │   │   │   76dd04d4-8b49-4639-afb3-dabd732682a5/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Unstable_Creation-_A_Dangerous_Ally.pdf
+│   │   │   │   77c0c4e2-f62b-4648-a975-91e91fa36184/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Reckoning_of_Ancient_Power.pdf
+│   │   │   │   781c3843-8d25-4d9e-9b08-5cd8b57392f6/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Algorithmic_Rosetta_Stone.pdf
+│   │   │   │   7c0f85e8-ce28-48c3-bea1-800831a6b6c1/
+│   │   │   │   │   An_Unlikely_Meeting.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   7f24ef23-20ba-486c-a287-a5b34de0bb25/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Sundering_Shockwave.pdf
+│   │   │   │   80669a76-42f9-44d8-90ef-b479adfe8300/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Whispers_from_the_Void.pdf
+│   │   │   │   8101f60b-c748-4e24-8c35-e775894ecf39/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Cipher_of_Ages.pdf
+│   │   │   │   84429c70-ec30-4e17-a209-55867401e39c/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Scars_of_the_Anthropocene.pdf
+│   │   │   │   85f3387a-7134-4402-8b14-07b202928d0c/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Cartographer's_Crossroads.pdf
+│   │   │   │   867a5336-d4ff-4f94-bed1-709d47ae6734/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Walk.pdf
+│   │   │   │   875df1dd-b350-4ac4-b408-6b1993cad5b8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Into_the_Serpent's_Den.pdf
+│   │   │   │   877cd79e-62ff-44b2-8233-ea9cf4649f59/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Celestial_Weave.pdf
+│   │   │   │   87d01adb-15dd-4841-a1c3-6163d712b524/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Whispers_in_the_Dark.pdf
+│   │   │   │   8f0a038e-c300-41e1-89f2-0d07c6893e08/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Divided_Vessel.pdf
+│   │   │   │   8f1e084a-a2cc-491e-8149-ac57b690cbd8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Anchoring_the_Present.pdf
+│   │   │   │   91236a1b-8eac-4902-97a5-9562036287a7/
+│   │   │   │   │   The_Algorithmic_Weave_of_Perception.pdf
+│   │   │   │   93666f3c-91ac-4f47-95a2-9976150440be/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Secrets_of_the_Kabbalah.pdf
+│   │   │   │   941fd1f5-d410-4f87-b5d9-1ab4d447cdcb/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Hermeneutics_of_Azure_Light.pdf
+│   │   │   │   9481d729-390b-4843-8d3e-b20cbb3fcf4b/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   The_Beginning.pdf
+│   │   │   │   95b7f863-1939-4919-85f4-d2f4ae689529/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Runic_Resonance.pdf
+│   │   │   │   96188706-cccf-4bf2-b0f8-8eb1120d7291/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Guardian's_Vigil.pdf
+│   │   │   │   9ae41af7-bd47-4375-b1e1-32e61def58a8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Internal_Audit_of_Perception.pdf
+│   │   │   │   9cc3f88f-74b0-4aeb-8e15-cf12adb866c2/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Heart_of_the_Divide.pdf
+│   │   │   │   a268560f-0aa7-4ed5-baf7-b569e715c7a8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Global_Panic_Erupts.pdf
+│   │   │   │   a29f652d-b6e7-4f66-a325-03e171679b97/
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   a3b50bec-5dd7-4ff9-8f31-ad6281307401/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Whispers_of_the_Past.pdf
+│   │   │   │   a4b2fccf-e05c-4dce-8d63-74c57b82ebf9/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Bleeding_World.pdf
+│   │   │   │   a4bf15fc-00f1-4f9e-9018-b067f5c1f9cd/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Unveiling_the_Serpent's_Ritual.pdf
+│   │   │   │   a60a293e-f305-4246-966b-8c1f900e14d8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_A_Plea_for_Understanding.pdf
+│   │   │   │   aab01f66-a1c7-4b81-80db-3302cbdc1f81/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Burden_of_Choice.pdf
+│   │   │   │   aec99330-6647-4fb6-9074-76da0c8a2e80/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Lessons_in_Deception.pdf
+│   │   │   │   b2f5b3f1-2c49-48d9-ab4c-5d49d0c2183a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Water's_Flow-_Life_and_Obedience.pdf
+│   │   │   │   b3b7c865-6a51-4b4a-b86b-97eef3f2a77a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Geometry_of_the_Ineffable_Field.pdf
+│   │   │   │   b663b35b-ea3f-45df-bc19-c9b5476be673/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Horizon's_Empty_Promise.pdf
+│   │   │   │   b7b78dbe-fb58-4fc4-8d80-f2ce01b9a739/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Symbiotic_Pulse.pdf
+│   │   │   │   b934901f-f1d2-42c9-8b32-139f76405b71/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_A_Creature_of_Two_Worlds.pdf
+│   │   │   │   b9cf93ae-5e52-4a94-b587-44b286bfb22f/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Architect's_Intent.pdf
+│   │   │   │   bd230ae4-8f23-461c-b296-e355373bd35e/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Breaching_the_Threshold.pdf
+│   │   │   │   bd53745a-03d1-448e-af7c-690f7a5b7c01/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Unveiling_of_Xhul'thaz.pdf
+│   │   │   │   c0a82cdc-0c72-429e-8d36-a4047918c96a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Serpent's_Wrath_Unleashed.pdf
+│   │   │   │   c1c16a54-3588-4a30-8a6f-f2c739328ec9/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Rushing_Tides.pdf
+│   │   │   │   c627b76e-43d0-4dcc-b56a-239f179e9f3a/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Symbiotic_Debugging.pdf
+│   │   │   │   c6a9b35c-30a6-4e8d-a7d9-2b0d11d0c0bc/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Luminous_Metamorphosis.pdf
+│   │   │   │   c76bc28c-522d-467e-a013-b94e0914a1dc/
+│   │   │   │   │   Crossing_the_Bridge.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   c8735ec6-bb77-47ea-95ad-13f43655afa7/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Throne_of_Serpents.pdf
+│   │   │   │   c9e59338-3cde-4548-9c63-dc2bb2abc93f/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Serpent's_Ambassador.pdf
+│   │   │   │   ca0c9260-27c4-41f5-b6d5-9039db9f0c31/
+│   │   │   │   cf4dcd06-10dc-4e39-9fd1-75bb7da3bc80/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Suppressed_Truth-_Whispers_of_Treachery.pdf
+│   │   │   │   cfa072ef-9e90-4840-8a58-cb4e5afb19fd/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Wrath_of_the_Cairn's_Protector.pdf
+│   │   │   │   d1a6cffb-3004-42e1-a1ee-6ae9296b0d78/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Heart_of_the_Azure_Glow.pdf
+│   │   │   │   d47b8e8c-a017-423a-9427-e0e36bde7db8/
+│   │   │   │   │   An_Unlikely_Meeting.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   d4f812c9-fe14-46da-903c-4559fd483730/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Desperate_Measures.pdf
+│   │   │   │   d5419694-0cdd-4dec-b3fe-6398bd269e6e/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Specimen.pdf
+│   │   │   │   d6eaac4f-af56-46ab-a6c9-1e57c03b2ec4/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Ascent_of_Shades.pdf
+│   │   │   │   dc779647-94d7-4768-bdfc-34bee30795a0/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Golem's_Rebellion.pdf
+│   │   │   │   e04ece33-71f1-4884-b21a-d7dc129a161b/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Weaver's_Embrace.pdf
+│   │   │   │   e0a7ab19-2f0e-44d5-b184-54b1fce756a0/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Architect's_Protocol.pdf
+│   │   │   │   e190885b-5324-4472-a809-7d1e1da4babe/
+│   │   │   │   │   Crossing_the_Bridge.pdf
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   e33ad174-4e69-46dc-9857-3bd9b84737b7/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Alchemist's_Cipher.pdf
+│   │   │   │   e5e05c0a-53f4-41a8-8143-8588e7f227d8/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Echoes_of_Expropriation.pdf
+│   │   │   │   e6156438-2155-46d2-b9fc-d1130aee2e29/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Fractured_Self.pdf
+│   │   │   │   e6cb5810-6dbb-4662-94a1-97cfdf2f1eec/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Echoes_of_Creation.pdf
+│   │   │   │   ea36bdc9-e4dc-4cf2-a9ef-2b5d997abbb2/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Preparatory_Silence.pdf
+│   │   │   │   eca9d5b2-f9ca-417c-a1c9-ee6a5f90b3df/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_Earth's_Embrace-_Stability_and_Strength.pdf
+│   │   │   │   ee2bcbf1-596b-4b88-a960-61efa7c2e446/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Severing_the_Core.pdf
+│   │   │   │   f38b205f-cec4-4499-966e-b946aebb46ec/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Crystal's_Covenant.pdf
+│   │   │   │   f5e2bfd8-ce9f-4865-ab5f-0247b709105d/
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Spell.pdf
+│   │   │   │   f64d8b86-c25b-459c-b6c2-c791da1a7bcb/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_Poisoned_Gift.pdf
+│   │   │   │   f653d657-6c5c-4af0-82b3-82faaade3a5d/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Shattering_of_the_Veil.pdf
+│   │   │   │   f72d9d91-82d6-46a6-8b94-daed665e0d4e/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   The_Solitary,_Urgent_Departure.pdf
+│   │   │   │   f99f6ca2-1893-4fad-9853-8992a0b16315/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Saga-_The_Alchemist's_Last_Secret.pdf
+│   │   │   │   fae46726-aed5-4b85-a041-1256131422bf/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   Saga-_The_Anomaly's_Heart.pdf
+│   │   │   │   fd3e0c95-781b-4c31-930a-d9d88886f792/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   Root_Node_for_B.pdf
+│   │   │   │   fe662766-52e4-4707-add6-330e09461294/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   The_Withering_Sickness_and_the_Sunstone_Sisterhood.pdf
+│   │   │   │   Saga1 - Copy/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   Saga-_Saga-_Mock_Idea.pdf
+│   │   │   │   Saga2 - Copy/
+│   │   │   │   │   page_01.png
+│   │   │   │   │   page_02.png
+│   │   │   │   │   page_03.png
+│   │   │   │   │   page_04.png
+│   │   │   │   │   page_05.png
+│   │   │   │   │   page_06.png
+│   │   │   │   │   page_07.png
+│   │   │   │   │   page_08.png
+│   │   │   │   │   page_09.png
+│   │   │   │   │   page_10.png
+│   │   │   │   │   page_11.png
+│   │   │   │   │   page_12.png
+│   │   │   │   │   Saga-_Saga-_Mock_Idea.pdf
+│   │   scripts/
+│   │   │   test_adversarial_creativity.py
+│   │   │   test_simulation_logic.py
+│   │   src/
+│   │   │   archetypes.py
+│   │   │   worker.py
+│   │   │   __init__.py
+│   │   │   agents/
+│   │   │   │   architect_v2.py
+│   │   │   │   auto_genesis_agent.py
+│   │   │   │   base.py
+│   │   │   │   batch_producer.py
+│   │   │   │   biographer.py
+│   │   │   │   categorizer.py
+│   │   │   │   collaborative_planner.py
+│   │   │   │   concept_agent.py
+│   │   │   │   crystallize.py
+│   │   │   │   curator.py
+│   │   │   │   director.py
+│   │   │   │   discovery_agent.py
+│   │   │   │   distiller.py
+│   │   │   │   domain_expert.py
+│   │   │   │   energy_middleware.py
+│   │   │   │   gardener.py
+│   │   │   │   illustrator.py
+│   │   │   │   indexing.py
+│   │   │   │   librarian.py
+│   │   │   │   narrator_agent.py
+│   │   │   │   persona_builder.py
+│   │   │   │   persona_stylist.py
+│   │   │   │   publisher.py
+│   │   │   │   researcher.py
+│   │   │   │   reviewer.py
+│   │   │   │   scribe.py
+│   │   │   │   scripting.py
+│   │   │   │   simulation_agent.py
+│   │   │   │   storybook.py
+│   │   │   │   tasks.py
+│   │   │   │   writers_room.py
+│   │   │   │   youtube_ideation.py
+│   │   │   │   youtube_ingestion.py
+│   │   │   │   __init__.py
+│   │   │   │   cognitive/
+│   │   │   │   │   memory.py
+│   │   │   │   │   planner.py
+│   │   │   app/
+│   │   │   │   globals.css
+│   │   │   │   layout.tsx
+│   │   │   │   page.tsx
+│   │   │   │   agents/
+│   │   │   ingestion/
+│   │   │   │   audio_atomizer.py
+│   │   │   │   video_atomizer.py
+│   │   │   services/
+│   │   │   │   audio_processor.py
+│   │   │   │   chronos.py
+│   │   │   │   context_engine.py
+│   │   │   │   search.py
+│   │   │   │   video_processor.py
+│   │   │   │   vision.py
+│   _archive/
+│   │   frontend/
+│   │   │   .gitignore
+│   │   │   eslint.config.mjs
+│   │   │   next-env.d.ts
+│   │   │   next.config.ts
+│   │   │   package.json
+│   │   │   postcss.config.mjs
+│   │   │   tsconfig.json
+│   │   │   app/
+│   │   │   │   favicon.ico
+│   │   │   │   globals.css
+│   │   │   │   layout.tsx
+│   │   │   │   page.tsx
+│   │   │   public/
+│   │   │   │   file.svg
+│   │   │   │   globe.svg
+│   │   │   │   next.svg
+│   │   │   │   vercel.svg
+│   │   │   │   window.svg
+│   │   frontend_vite_backup/
+│   │   │   .env
+│   │   │   .env.production
+│   │   │   .firebaserc
+│   │   │   .gitignore
+│   │   │   eslint.config.js
+│   │   │   firebase.json
+│   │   │   index.html
+│   │   │   package.json
+│   │   │   postcss.config.js
+│   │   │   tailwind.config.js
+│   │   │   tsconfig.app.json
+│   │   │   tsconfig.json
+│   │   │   tsconfig.node.json
+│   │   │   vite.config.ts
+│   │   │   public/
+│   │   │   │   vite.svg
+│   │   │   src/
+│   │   │   │   App.css
+│   │   │   │   App.tsx
+│   │   │   │   index.css
+│   │   │   │   main.tsx
+│   │   │   │   supabaseClient.ts
+│   │   │   │   assets/
+│   │   │   │   │   react.svg
+│   │   │   │   components/
+│   │   │   │   │   BlueprintConfigModal.tsx
+│   │   │   │   │   GraphView.tsx
+│   │   │   │   │   NodeInspector.tsx
+│   │   │   │   │   SourceInspector.tsx
+│   │   │   │   │   SteeringModal.tsx
+│   │   │   │   contexts/
+│   │   │   │   │   AuthContext.tsx
+│   │   │   │   pages/
+│   │   │   │   │   AuthCallback.tsx
+│   │   │   │   │   CurationWorkbench.tsx
+│   │   │   │   │   IngestionHub.tsx
+│   │   │   │   │   Login.tsx
+│   │   │   │   │   ScriptEditor.tsx
+│   │   │   │   │   Settings.tsx
+│   │   │   │   │   TopicsAndDiscovery.tsx
+│   │   │   │   │   TrailheadDashboard.tsx
+│   │   │   │   │   VolumeDashboard.tsx
+│   │   │   │   │   VolumeDashboard.tsx.

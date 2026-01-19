@@ -1,0 +1,151 @@
+[
+  {
+    "insertId": "6918fde9000bff9c4b7596c0",
+    "labels": {
+      "instanceId": "0014778296e0d940697352a6023176108c75a84a0b5c773955b81f75a11b215870fa62a5e97e4ac309bf7b46ed3915b7185a710637b22cd16a442380c23b899889167cf2d62300677592a294c8"
+    },
+    "logName": "projects/thesunroom-476921/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2025-11-15T22:25:46.123077207Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "sunroom-api",
+        "location": "us-central1",
+        "project_id": "thesunroom-476921",
+        "revision_name": "sunroom-api-00165-wbr",
+        "service_name": "sunroom-api"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "[2025-11-15 22:25:45 +0000] [10] [INFO] Using worker: uvicorn.workers.UvicornWorker",
+    "timestamp": "2025-11-15T22:25:45.786332Z"
+  },
+  {
+    "insertId": "6918fde9000bff977b6aa3c0",
+    "labels": {
+      "instanceId": "0014778296e0d940697352a6023176108c75a84a0b5c773955b81f75a11b215870fa62a5e97e4ac309bf7b46ed3915b7185a710637b22cd16a442380c23b899889167cf2d62300677592a294c8"
+    },
+    "logName": "projects/thesunroom-476921/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2025-11-15T22:25:46.123077207Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "sunroom-api",
+        "location": "us-central1",
+        "project_id": "thesunroom-476921",
+        "revision_name": "sunroom-api-00165-wbr",
+        "service_name": "sunroom-api"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "[2025-11-15 22:25:45 +0000] [10] [INFO] Listening at: http://0.0.0.0:8080 (10)",
+    "timestamp": "2025-11-15T22:25:45.786327Z"
+  },
+  {
+    "insertId": "6918fde9000bff3e9e6651f3",
+    "labels": {
+      "instanceId": "0014778296e0d940697352a6023176108c75a84a0b5c773955b81f75a11b215870fa62a5e97e4ac309bf7b46ed3915b7185a710637b22cd16a442380c23b899889167cf2d62300677592a294c8"
+    },
+    "logName": "projects/thesunroom-476921/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2025-11-15T22:25:45.790643134Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "sunroom-api",
+        "location": "us-central1",
+        "project_id": "thesunroom-476921",
+        "revision_name": "sunroom-api-00165-wbr",
+        "service_name": "sunroom-api"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "[2025-11-15 22:25:45 +0000] [10] [INFO] Starting gunicorn 23.0.0",
+    "timestamp": "2025-11-15T22:25:45.786238Z"
+  },
+  {
+    "insertId": "6918fde8000ab72b82328464",
+    "labels": {
+      "instanceId": "0014778296e0d940697352a6023176108c75a84a0b5c773955b81f75a11b215870fa62a5e97e4ac309bf7b46ed3915b7185a710637b22cd16a442380c23b899889167cf2d62300677592a294c8",
+      "scaling_reason": "DEPLOYMENT_ROLLOUT"
+    },
+    "logName": "projects/thesunroom-476921/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2025-11-15T22:25:44.706562893Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "sunroom-api",
+        "location": "us-central1",
+        "project_id": "thesunroom-476921",
+        "revision_name": "sunroom-api-00165-wbr",
+        "service_name": "sunroom-api"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.",
+    "timestamp": "2025-11-15T22:25:44.702251Z"
+  },
+  {
+    "insertId": "31x48lcd4k",
+    "logName": "projects/thesunroom-476921/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "111633863321044074793"
+        },
+        "principalEmail": "136102377810-compute@developer.gserviceaccount.com",
+        "principalSubject": "serviceAccount:136102377810-compute@developer.gserviceaccount.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "run.services.update",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/thesunroom-476921/services/sunroom-api",
+          "resourceAttributes": {}
+        },
+        {
+          "granted": true,
+          "permission": "run.services.update",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/thesunroom-476921/services/sunroom-api",
+          "resourceAttributes": {
+            "name": "namespaces/thesunroom-476921/services/sunroom-api",
+            "service": "run.googleapis.com/",
+            "type": "run.googleapis.com/Service"
+          }
+        }
+      ],
+      "methodName": "google.cloud.run.v1.Services.ReplaceService",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.ReplaceServiceRequest"
+      },
+      "requestMetadata": {
+        "callerIp": "34.105.10.120",
+        "callerSuppliedUserAgent": "google-cloud-sdk gcloud/547.0.0 command/gcloud.run.deploy invocation-id/884d2811b0c84533aeba6a706b6e9eba environment/GCE environment-version/None client-os/LINUX client-os-ver/5.10.0 client-pltf-arch/x86_64 interactive/False from-script/False python/3.13.7 term/  (Linux 5.10.0-32-cloud-amd64),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2025-11-15T22:25:24.976295Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "us-central1"
+        ]
+      },
+      "resourceName": "namespaces/thesunroom-476921/services/sunroom-api",
+      "serviceName": "run.googleapis.com"
+    },
+    "receiveTimestamp": "2025-11-15T22:25:25.310471010Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "us-central1",
+        "project_id": "thesunroom-476921",
+        "revision_name": "",
+        "service_name": "sunroom-api"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2025-11-15T22:25:24.814419Z"
+  }
+]

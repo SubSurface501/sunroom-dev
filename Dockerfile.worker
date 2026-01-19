@@ -1,0 +1,71 @@
+# Stage 1: Builder
+# This stage installs all dependencies, including build-time tools.
+FROM python:3.11 as builder
+
+WORKDIR /app
+
+# Install system dependencies needed for building python packages
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
+# Install python dependencies into a virtual environment
+COPY requirements.txt .
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Obsidian Layer: Absolute infrastructure dependencies to prevent boot crashes
+RUN pip install --no-cache-dir \
+    "pydantic>=2.7.0,<2.8.0" \
+    "langchain>=0.3.0,<0.4.0" \
+    "supabase>=2.4.0,<2.5.0" \
+    "langgraph>=0.2.0,<0.3.0" \
+    "gunicorn==23.0.0" \
+    "sentry-sdk[fastapi]" \
+    "google-cloud-texttospeech" \
+    "google-auth-oauthlib" \
+    "google-auth-httplib2" \
+    "httpx" \
+    "reportlab" \
+    "pdfminer.six" \
+    "scikit-learn" \
+    "numpy" \
+    "lxml_html_clean" \
+    "stripe" \
+    "google-api-python-client" \
+    "python-multipart"
+
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install celery
+
+# Download NLTK data
+RUN python -m nltk.downloader punkt
+
+# Stage 2: Production
+# This stage uses a slim base image and copies only what's needed.
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy the virtual environment from the builder stage
+COPY --from=builder /opt/venv /opt/venv
+
+# Copy the NLTK data from the builder stage
+COPY --from=builder /root/nltk_data /root/nltk_data
+
+# Copy application code
+COPY . .
+
+# Make the entrypoint script executable
+RUN chmod +x run_worker.py
+
+# Create a non-root user to run the application
+RUN useradd --create-home appuser
+USER appuser
+
+# Set the PATH to include the venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Set Environment Variables
+ENV PYTHONPATH=/app
+ENV CELERYD_CONCURRENCY=1
+
+CMD ["/opt/venv/bin/python", "/app/run_worker.py"]

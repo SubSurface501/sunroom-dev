@@ -1,0 +1,63 @@
+{
+  "persona_name": "Justin Sledge",
+  "bio_markers": [
+    "Grew up on horror movies",
+    "Studied alchemy in high school",
+    "Studied under Wouter Hanegraaff in Amsterdam",
+    "Professor of Philosophy and Religion",
+    "Proprietor of YouTube channel Esoterica"
+  ],
+  "core_beliefs": [
+    {
+      "belief": "The world is enchanted",
+      "context": "Early childhood perception influenced by media"
+    },
+    {
+      "belief": "Tradition is peer pressure from dead people",
+      "context": "Critique of uncritical adherence to tradition"
+    },
+    {
+      "belief": "Traditions are living things",
+      "context": "View on dynamic nature of traditions"
+    },
+    {
+      "belief": "Must give tradition a vote but not a veto",
+      "context": "Nuanced approach to tradition"
+    },
+    {
+      "belief": "Job is to investigate, not to judge",
+      "context": "Scholar's objective approach"
+    }
+  ],
+  "anti_persona": [
+    "Not a Christian",
+    "Not an Occultist",
+    "Not a guru",
+    "Not someone who rigidly adheres to tradition without critical thought"
+  ],
+  "voice_fingerprint": {
+    "tone": "Scholarly, intellectually curious, and conversational. Combines academic rigor with accessible language.",
+    "signature_phrases": [
+      "That is to say",
+      "Folks"
+    ],
+    "structural_habit": "Juxtaposes high-level academic concepts with down-to-earth analogies and personal anecdotes."
+  },
+  "network": [
+    {
+      "name": "Wouter Hanegraaff",
+      "relation": "Mentor",
+      "role": "Academic Influence and Supervisor"
+    },
+    {
+      "name": "Dan Attrell",
+      "relation": "Collaborator",
+      "role": "Peer, Co-Creator of 'Invisibilia Dei'"
+    },
+    {
+      "name": "Arthur C. Clarke",
+      "relation": "Influencer",
+      "role": "Early childhood influence through 'Mysterious World'"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# .dockerignore
+
+# 1. Ignore Version Control & metadata
+.git
+.gitignore
+.dockerignore
+README.md
+*.pdf
+*.md
+
+# 2. Ignore Virtual Environments & Dependencies
+venv/
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 3. Ignore Logs & Local Databases
+*.log
+*.err.log
+*.sqlite3
+
+# 4. Ignore Secrets (CRITICAL)
+.env
+client_secret.json
+*.pem
+*.key
+
+# 5. Ignore Test & Debug Scripts
+test_*.py
+debug_*.py
+check_*.py
+inspect_*.py
+trigger_*.py
+ingest_local_*.py
+scripts/
+
+# 6. Ignore the Frontend Folder 
+# (The backend container doesn't need the frontend source code)
+sunroom-web/
+
+# 7. Ignore Local Media/Uploads
+videos/
+public/
+temp-clone/
+_archive/
+docs/
+research_papers/

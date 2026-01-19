@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # 1. The Web API (FastAPI/Flask)
+  api:
+    build: .
+    container_name: sunroom_api
+    command: gunicorn -w 1 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 api_server:app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    networks:
+      - sunroom_net
+
+  # 2. The Background Worker (WhisperX GPU Processing)
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: sunroom_worker
+    volumes:
+      - .:/app
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - PYTHONUTF8=1
+      - GRPC_VERBOSITY=ERROR
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    networks:
+      - sunroom_net
+    # GPU RESERVATION CONFIGURATION
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # 3. Redis (Message Broker)
+  redis:
+    image: redis:7-alpine
+    container_name: sunroom_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - sunroom_net
+
+networks:
+  sunroom_net:
+    driver: bridge

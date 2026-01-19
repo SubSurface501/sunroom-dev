@@ -1,0 +1,1 @@
+ALTER TABLE public."Atoms" ADD COLUMN IF NOT EXISTS type TEXT DEFAULT 'concept';

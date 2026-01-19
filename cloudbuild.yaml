@@ -1,0 +1,48 @@
+steps:
+# TODO: Add a dedicated testing step here before building the image.
+# For example:
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/thesunroom-476921/sunroom-test', '-f', 'Dockerfile.test', '.']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['run', 'gcr.io/thesunroom-476921/sunroom-test']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/thesunroom-476921/sunroom-worker', '-f', 'Dockerfile.worker', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/thesunroom-476921/sunroom-worker']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'sunroom-worker'
+  - '--image'
+  - 'gcr.io/thesunroom-476921/sunroom-worker'
+  - '--region'
+  - 'us-central1'
+  - '--platform'
+  - 'managed'
+  - '--service-account'
+  - '136102377810-compute@developer.gserviceaccount.com'
+  - '--no-cpu-throttling'
+  - '--max-instances=1'
+  - '--min-instances=0'
+  - '--execution-environment=gen2'
+  - '--memory'
+  - '2Gi'
+  - '--cpu'
+  - '2'
+  - '--command=python'
+  - '--args=run_worker.py'
+  - '--ingress=internal' # Ensure worker is internal-only
+  - '--vpc-connector'
+  - 'sunroom-vpc-connector'
+  - '--vpc-egress'
+  - 'private-ranges-only'
+  # WARNING: Secrets should not be stored in plain text in your cloudbuild.yaml.
+  # Use a secret manager like Google Secret Manager.
+  # Example: --set-secrets=SUPABASE_URL=supabase-url:latest
+  - '--set-env-vars'
+  - '^@^SUPABASE_URL=https://fbzrobgstwkxwcsomtur.supabase.co@SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZienJvYmdzdHdreHdjc29tdHVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NTMzNzUsImV4cCI6MjA3ODQyOTM3NX0.jbUArhNqNqJ3CIFdPkp2PNrreOrxgtom8AwdSzoXnCM@SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZienJvYmdzdHdreHdjc29tdHVyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImiYWQiOjE3NjI4NTMzNzUsImV4cCI6MjA3ODQyOTM3NX0.NoW2y3m4xQA4agHlZTf_YOUNipeeCHdAhv9sSHhml7Q@GEMINI_API_KEY=AIzaSyAuVQ2LaM23dYxtrirC_fupPg69LZJrtbM@GOOGLE_CLIENT_ID=136102377810-nueb4ip1790ip5a1u15ifa9ilsgcb44d.apps.googleusercontent.com@GOOGLE_CLIENT_SECRET=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@CELERY_BROKER_URL=redis://172.16.0.3:6379/0@SUPABASE_JWT_SECRET=CFGgfawskiOahDriXJEv/FF+M+ZuPNw0+YlTaMhmM2x8uVfdmMl6X2fHqJJcDRtNZIFfZ7m9f2D4hqGetkleBw=='
+images:
+- 'gcr.io/thesunroom-476921/sunroom-worker'

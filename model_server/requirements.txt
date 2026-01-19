@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+torch==2.1.0
+diffusers==0.24.0
+transformers==4.35.2
+accelerate==0.24.1
+safetensors
+pydantic
+huggingface-hub==0.23.0

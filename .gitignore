@@ -1,0 +1,50 @@
+# Environments
+.venv
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets
+.env
+*.env
+.env.local
+client_secret.json
+thesunroom-476921-944e397af114.json
+*.pem
+*.key
+
+# Logs
+logs/
+*.log
+deploy_err.txt
+deploy_out.txt
+isolation_test_log.txt
+
+# Caches
+.ruff_cache/
+.DS_Store
+
+# Archives & Docs
+_archive/
+
+# Local data
+videos/
+
+# build artifacts
+build/
+dist/
+worker/output/
+*.pdf
+
+# Frontend
+sunroom-web/node_modules
+sunroom-web/.next
+sunroom-web/out
+
+# IDE files
+.vscode/
+.idea/
