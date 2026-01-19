@@ -11,7 +11,7 @@ from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
 from fastapi import FastAPI, Depends, HTTPException, Request, BackgroundTasks, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.concurrency import run_in_threadpool
+from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel
 from supabase import create_client, Client
 from dotenv import load_dotenv
