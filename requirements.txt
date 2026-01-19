@@ -49,3 +49,4 @@ google-auth-httplib2
 sentry-sdk[fastapi]
 google-cloud-texttospeech
 python-multipart
+sqlalchemy
