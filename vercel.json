@@ -1,5 +1,3 @@
 {
-  "buildCommand": "cd sunroom-web && npm run build",
-  "installCommand": "cd sunroom-web && npm install",
   "framework": "nextjs"
 }
