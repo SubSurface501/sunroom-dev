@@ -5,7 +5,7 @@ from supabase import create_client, Client
 from supabase.lib.client_options import ClientOptions
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY") # Use the service key
 
 def get_supabase(request: Request) -> Client:
     token = request.headers.get("Authorization", "").replace("Bearer ", "")
